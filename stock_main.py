@@ -48,8 +48,8 @@ for line in headlines:
      words.append(line.split())
 for real_words in words:
     merged_list += real_words
-print merged_list
-
+#print merged_list
+print "I like muffins"
 
 
 
