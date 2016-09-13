@@ -30,7 +30,7 @@ dateList = dateFile.readlines()
 
 docs =  articles["response"]["docs"]
 headline_dates = []
-headlines = []
+headlines = {}
 for i in docs:
     headline_dates = i["pub_date"]
     newHeadlineDates = i["pub_date"][:10]
@@ -39,16 +39,20 @@ for i in docs:
         finalDate = str(sDate)[:10]
         dateFiles.write(finalDate)
         if str(newHeadlineDates) == finalDate:
-            print i["headline"]["main"]
-            print i["pub_date"]
-            headlines.append(i["headline"]["main"])
+            #print i["headline"]["main"]
+            #print i["pub_date"]
+            headlines[i["headline"]["main"]] = finalDate
+
+wordFile = open("wordFile.txt","w")
 words = []
-merged_list = []
-for line in headlines:
-     words.append(line.split())
-for real_words in words:
-    merged_list += real_words
-#print merged_list
-
-
-
+merged_list = ""
+temp = ""
+finalsplit = ""
+split_words = ""
+for my_word, my_date in headlines.iteritems():
+    split_words = my_word.split(' ')
+    for each_word in split_words:
+        each_word = each_word + " " +  str(my_date) + "\n"
+        newString = (each_word).replace(',', '')
+        finalString = (newString).replace(';', '')
+        wordFile.write(each_word)
