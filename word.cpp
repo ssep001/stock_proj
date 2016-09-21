@@ -42,7 +42,7 @@ ostream& operator<<(ostream& os,word& newWord){
 
 
 // Constructor for BTreeNode class
-BTreeNode::BTreeNode(int t1, bool leaf1)
+BTreeNode::BTreeNode(word t1, bool leaf1)
 {
     // Copy the given minimum degree and leaf property
     t = t1;

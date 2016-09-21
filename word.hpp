@@ -37,7 +37,7 @@ public:
     int n;	 // Current number of keys
     bool leaf; // Is true when node is leaf. Otherwise false
 
-    BTreeNode(int _t, bool _leaf); // Constructor
+    BTreeNode(word _t, bool _leaf); // Constructor
     
     // A utility function to insert a new key in the subtree rooted with
     // this node. The assumption is, the node must be non-full when this
