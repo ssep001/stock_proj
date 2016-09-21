@@ -3,6 +3,9 @@ import json
 from pprint import pprint
 from collections import defaultdict
 import string
+import os
+import sys
+
 '''from lxml import html
 import requests
 import urllib
@@ -56,3 +59,11 @@ for my_word, my_date in headlines.iteritems():
         newString = (each_word).replace(',', '')
         finalString = (newString).replace(';', '')
         wordFile.write(each_word)
+
+run_command = raw_input("should we push to git: ")
+print run_command
+if run_command == "yes":
+   # print "almost there"
+    os.system("git status")
+
+
